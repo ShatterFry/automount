@@ -1,0 +1,40 @@
+#!/bin/zsh
+
+# Bourne-compatible shell (Bourne Shell)
+# bash, zsh
+# Permissions: chmod u+x fileName
+# ./scriptName.sh
+# /home/nikita-kaverin/Desktop
+
+sudo mount /dev/sda5 /media/nikita-kaverin/Data -o uid=1000
+#sudo umount /dev/sda5
+RESULT="$?"
+echo "Last command result = $RESULT"
+
+echo "Hello, World!"
+
+FILE_NAME="$0"
+echo "File name: $FILE_NAME"
+
+ARGS_NUM="$#"
+echo "Args num: $ARGS_NUM"
+
+FIRST_ARGUMENT="$1"
+echo "First argument: $FIRST_ARGUMENT"
+
+echo "Array of args: $@"
+
+echo "For cycle over agrs:"
+for arg in "$@"
+do
+    echo $arg
+done
+
+c=1
+while [ $c -le 5 ]
+do
+    echo "c = $c"
+    (( c++ ))
+done
+
+exit
