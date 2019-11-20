@@ -6,10 +6,17 @@
 # ./scriptName.sh
 # /home/nikita-kaverin/Desktop
 
-sudo mount /dev/sda5 /media/nikita-kaverin/Data -o uid=1000
+#sudo mount /dev/sda5 /media/nikita-kaverin/Data -o uid=1000
 #sudo umount /dev/sda5
-RESULT="$?"
-echo "Last command result = $RESULT"
+#RESULT="$?"
+#echo "Mount result = $RESULT"
+
+if [ -d /media/nikita-kaverin/custom/Data ]
+then
+    echo "Mount point directory exist"
+else
+    echo "Mount point directory NOT exist"
+fi
 
 echo "Hello, World!"
 

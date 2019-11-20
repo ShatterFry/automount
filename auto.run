@@ -1,0 +1,25 @@
+#!/bin/bash
+
+logger "Passed args = $@"
+logger "Args num = $#"
+
+if [ -d /media/nikita-kaverin/custom/Data ]
+then
+    logger Mount point directory already exists
+else
+    logger Mount point directory NOT exists
+    mkdir /media/nikita-kaverin/custom/Data
+    logger "Making directory result = $?"
+fi
+
+mount /dev/sda5 /media/nikita-kaverin/custom/Data -o uid=1000
+MOUNT_RESULT="$?"
+logger "Mount result = $MOUNT_RESULT"
+
+if [ "$#" -eq 0 ]
+then
+    echo Data
+    exit
+else
+    echo /dev/sda5
+fi
