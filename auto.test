@@ -11,12 +11,16 @@
 #RESULT="$?"
 #echo "Mount result = $RESULT"
 
+
 if [ -d /media/nikita-kaverin/custom/Data ]
 then
-    echo "Mount point directory exist"
+    echo "Mount point directory exists"
 else
-    echo "Mount point directory NOT exist"
+    echo "Mount point directory is NOT exist. Creating"
+    mkdir /media/nikita-kaverin/custom/Data
+    echo "Mount point directory creating result = $?"
 fi
+
 
 echo "Hello, World!"
 
